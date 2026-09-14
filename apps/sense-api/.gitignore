@@ -1,0 +1,16 @@
+# Environment and Secrets
+.env
+.env.local
+*.env
+!.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3-journal
+
+# Local Index and Test artifacts
+bm25_corpus.pkl
+*.log

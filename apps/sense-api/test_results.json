@@ -1,0 +1,85 @@
+[
+  {
+    "response_text": "What is the brand and model of the motor?",
+    "intent": "TROUBLESHOOTING",
+    "agent_used": "TroubleshootingAgent",
+    "sources": [],
+    "state": "CLARIFYING",
+    "search_query": "",
+    "media": null,
+    "steps": null,
+    "ecosystem_escalation": null,
+    "tool_calls_made": [
+      {
+        "tool": "hybrid_retrieval",
+        "results": 0,
+        "success": false
+      }
+    ]
+  },
+  {
+    "response_text": "Is there any fault code or error message displayed on the motor's control panel?",
+    "intent": "TROUBLESHOOTING",
+    "agent_used": "TroubleshootingAgent",
+    "sources": [],
+    "state": "CLARIFYING",
+    "search_query": "",
+    "media": null,
+    "steps": null,
+    "ecosystem_escalation": null,
+    "tool_calls_made": [
+      {
+        "tool": "hybrid_retrieval",
+        "results": 0,
+        "success": false
+      }
+    ]
+  },
+  {
+    "response_text": "Is the motor making any unusual noises, such as whining, grinding, or humming sounds?",
+    "intent": "TROUBLESHOOTING",
+    "agent_used": "TroubleshootingAgent",
+    "sources": [],
+    "state": "CLARIFYING",
+    "search_query": "",
+    "media": null,
+    "steps": null,
+    "ecosystem_escalation": null,
+    "tool_calls_made": [
+      {
+        "tool": "hybrid_retrieval",
+        "results": 0,
+        "success": false
+      }
+    ]
+  },
+  {
+    "response_text": "Based on the information provided, it appears that the motor is experiencing a mechanical failure, likely due to overheating. Here are some steps to help diagnose and potentially repair the issue:",
+    "intent": "TROUBLESHOOTING",
+    "agent_used": "TroubleshootingAgent",
+    "sources": [],
+    "state": "RESOLVED",
+    "search_query": "",
+    "media": {
+      "image": "https://source.unsplash.com/800x600/?siemens,motor",
+      "video": null
+    },
+    "steps": [
+      "Safety Warning: Before attempting any repairs, ensure the motor is disconnected from power and any potential hazards are addressed.",
+      "Inspect the motor for signs of physical damage or excessive wear, such as cracks, dents, or rust. Check for any loose connections or worn-out bearings.",
+      "Check the motor's temperature rating and compare it to the operating conditions. If the motor is being operated above its rated temperature, this could be contributing to the failure.",
+      "Inspect the motor's electrical connections and wiring for signs of wear, damage, or corrosion. Check for any loose connections or worn-out insulation.",
+      "Consult the motor's documentation and manufacturer's guidelines for troubleshooting and repair procedures."
+    ],
+    "ecosystem_escalation": {
+      "goose_solutions": "https://www.goosesolutions.in/"
+    },
+    "tool_calls_made": [
+      {
+        "tool": "hybrid_retrieval",
+        "results": 0,
+        "success": false
+      }
+    ]
+  }
+]

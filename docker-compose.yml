@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  goose-mart:
+    build:
+      context: .
+      dockerfile: apps/goose-mart/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/goose-mart:/app/apps/goose-mart
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: npm run dev --workspace=apps/goose-mart
+
+  goose-digital:
+    build:
+      context: .
+      dockerfile: apps/goose-digital/Dockerfile
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./apps/goose-digital:/app/apps/goose-digital
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: npm run dev --workspace=apps/goose-digital
+
+  goose-elevate:
+    build:
+      context: .
+      dockerfile: apps/goose-elevate/Dockerfile
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./apps/goose-elevate:/app/apps/goose-elevate
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: npm run dev --workspace=apps/goose-elevate
+
+  hire-my-engineer:
+    build:
+      context: .
+      dockerfile: apps/hire-my-engineer/Dockerfile
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./apps/hire-my-engineer:/app/apps/hire-my-engineer
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: npm run dev --workspace=apps/hire-my-engineer
+
+  portal:
+    build:
+      context: .
+      dockerfile: apps/portal/Dockerfile
+    ports:
+      - "3004:3000"
+    volumes:
+      - ./apps/portal:/app/apps/portal
+      - ./packages:/app/packages
+    environment:
+      - NODE_ENV=development
+    command: npm run dev --workspace=apps/portal
+
+networks:
+  default:
+    name: goose-ecosystem-network

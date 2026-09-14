@@ -1,0 +1,247 @@
+[
+  {
+    "equipment": "pasteurizer",
+    "issue": "not heating",
+    "description": "Pasteurizer is not reaching target temperature.",
+    "questions": [{ "id": "steam", "question": "Is steam pressure available at the supply line?" }],
+    "logic": [
+      {
+        "condition": "steam == no",
+        "cause": "Steam supply interruption or valve malfunction preventing heat transfer to plates.",
+        "solution": {
+          "steps": [
+            "Step 1: Put on heat-resistant PPE including gloves and safety goggles.",
+            "Step 2: Locate the primary steam inlet valve at the base of the pasteurizer unit.",
+            "Step 3: Verify the valve handle is in the 'Open' position (aligned with the pipe).",
+            "Step 4: Check the pressure gauge; it must read above 3.0 bar for effective heating.",
+            "Step 5: If pressure is low, verify the boiler status with the plant operator.",
+            "Step 6: Inspect the steam trap for blockages if the supply line is hot but plates are cold."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=qmzTSGlM9bQ",
+            "image": "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "cip_system",
+    "issue": "poor cleaning",
+    "description": "Clean-In-Place cycle failing to remove soil or leaving residue.",
+    "questions": [{ "id": "temp", "question": "Is cleaning temperature sufficient (above 75°C)?" }],
+    "logic": [
+      {
+        "condition": "temp == no",
+        "cause": "Low cleaning efficiency due to insufficient thermal energy for breaking down residues.",
+        "solution": {
+          "steps": [
+            "Step 1: Check the CIP heater setpoint on the control interface.",
+            "Step 2: Inspect the steam control valve for the CIP supply tank.",
+            "Step 3: Verify chemical concentration levels; heat alone is insufficient.",
+            "Step 4: Ensure pump flow is correctly pressurized for mechanical scrubbing action.",
+            "Step 5: Check spray balls for debris that might be causing cold spots."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=HHD24n4_Jzw",
+            "image": "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "pump",
+    "issue": "not starting",
+    "description": "Pump motor fails to activate.",
+    "questions": [{ "id": "power", "question": "Is power available at the local control panel?" }],
+    "logic": [
+      {
+        "condition": "power == no",
+        "cause": "Electrical supply issue or tripped breaker.",
+        "solution": {
+          "steps": [
+            "Step 1: Check the local isolator switch; ensure it's ON.",
+            "Step 2: Verify the MCC (Motor Control Center) breaker status.",
+            "Step 3: Check for E-Stop buttons that might be engaged.",
+            "Step 4: Inspect cable connections for signs of overheating or loosening.",
+            "Step 5: Contact an electrician if the breaker immediately trips on reset."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=ft4RwET6UNw",
+            "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "pump",
+    "issue": "low flow",
+    "description": "Pump is running but flow rate is below specification.",
+    "questions": [{ "id": "blockage", "question": "Is there a visible blockage or restriction in the pipeline?" }],
+    "logic": [
+      {
+        "condition": "blockage == yes",
+        "cause": "Pipeline restriction or internal pump impeller blockage.",
+        "solution": {
+          "steps": [
+            "Step 1: Stop the pump and isolate the line.",
+            "Step 2: Open the pump casing carefully.",
+            "Step 3: Clear any debris from the impeller or wear plates.",
+            "Step 4: Check if any downstream valves are partially closed.",
+            "Step 5: Inspect gaskets for potential air leaks causing cavitation."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=wr6NqKEPrpw",
+            "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "boiler",
+    "issue": "no steam",
+    "questions": [{ "id": "fuel", "question": "Is fuel supply available and the burner igniting?" }],
+    "logic": [
+      {
+        "condition": "fuel == no",
+        "cause": "Fuel supply interruption or burner ignition failure.",
+        "solution": {
+          "steps": [
+            "Step 1: Confirm gas/fuel pressure at the main regulator.",
+            "Step 2: Check burner control for lockout alarm codes.",
+            "Step 3: Verify spark igniter is clean and functioning.",
+            "Step 4: Inspect air intake for sufficient combustion oxygen.",
+            "Step 5: Reset burner after ensuring fuel supply is restored."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=7-3otn8wHqU",
+            "image": "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "valve",
+    "issue": "not opening",
+    "questions": [{ "id": "air", "question": "Is the pneumatic air supply pressure above 5 bar?" }],
+    "logic": [
+      {
+        "condition": "air == no",
+        "cause": "Insufficient pneumatic pressure or solenoid failure.",
+        "solution": {
+          "steps": [
+            "Step 1: Read the air regulator gauge; adjust if below 5 bar.",
+            "Step 2: Check for air leaks in the pneumatic tubing.",
+            "Step 3: Test the solenoid valve coil for electrical continuity.",
+            "Step 4: Clean the air filter/silencer from moisture or debris.",
+            "Step 5: Manually actuate the valve if it has a mechanical override."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=uvgRVfBPmeQ",
+            "image": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "sensor",
+    "issue": "wrong reading",
+    "questions": [{ "id": "calibration", "question": "Has the sensor been calibrated in the last 3 months?" }],
+    "logic": [
+      {
+        "condition": "calibration == no",
+        "cause": "Sensor calibration drift over time.",
+        "solution": {
+          "steps": [
+            "Step 1: Remove sensor from the process line.",
+            "Step 2: Use a reference thermometer/calibrator for testing.",
+            "Step 3: Adjust the zero/span settings at the transmitter.",
+            "Step 4: Re-insert sensor and verify reading against PLC.",
+            "Step 5: Record calibration results in the maintenance log."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=8KJdYbjuHMQ",
+            "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "conveyor",
+    "issue": "not moving",
+    "questions": [{ "id": "jam", "question": "Is the conveyor belt visibly jammed or stalled?" }],
+    "logic": [
+      {
+        "condition": "jam == yes",
+        "cause": "Mechanical belt jam or motor overload.",
+        "solution": {
+          "steps": [
+            "Step 1: Engage E-Stop and Lockout/Tagout (LOTO).",
+            "Step 2: Clear any product or debris from the rollers.",
+            "Step 3: Check belt tension; adjust if slipping.",
+            "Step 4: Inspect motor bearings for signs of seizure.",
+            "Step 5: Clear E-Stop and test run the belt empty."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=ft4RwET6UNw",
+            "image": "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "heat_exchanger",
+    "issue": "low efficiency",
+    "questions": [{ "id": "fouling", "question": "Is there visible scale or fouling on the heat exchanger plates?" }],
+    "logic": [
+      {
+        "condition": "fouling == yes",
+        "cause": "Scale buildup or plate fouling reducing heat transfer.",
+        "solution": {
+          "steps": [
+            "Step 1: Initiate a high-temperature CIP cycle.",
+            "Step 2: Ensure desalination/distillation chemicals are added.",
+            "Step 3: Check flow velocity; low turbulence causes fouling.",
+            "Step 4: If CIP fails, dismantle the plates for manual scrubbing.",
+            "Step 5: Inspect plate gaskets for wear during assembly."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=woPmrPuQScE",
+            "image": "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=600"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "equipment": "compressor",
+    "issue": "not working",
+    "questions": [{ "id": "pressure", "question": "Is the discharge pressure building at all on the gauge?" }],
+    "logic": [
+      {
+        "condition": "pressure == no",
+        "cause": "Compressor valve failure or internal leak.",
+        "solution": {
+          "steps": [
+            "Step 1: Check the inlet air filter for heavy clogging.",
+            "Step 2: Inspect discharge valves for carbon buildup.",
+            "Step 3: Check for audible leaks around cylinder heads.",
+            "Step 4: Verify the unloader is not stuck in the open position.",
+            "Step 5: Monitor oil level and temperature for abnormal spikes."
+          ],
+          "media": {
+            "video": "https://www.youtube.com/watch?v=ft4RwET6UNw",
+            "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600"
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "response_text": "Based on the information provided, I've identified potential causes and steps to resolve the issue with your ABB M2BAX industrial motor.",
+  "intent": "TROUBLESHOOTING",
+  "agent_used": "TroubleshootingAgent",
+  "session_id": "ac9e3143-fe5b-4c8c-bc4e-8342b80800a4",
+  "sources": [],
+  "state": "RESOLVED",
+  "search_query": "",
+  "tool_calls_made": [
+    {
+      "tool": "hybrid_retrieval",
+      "results": 0,
+      "success": false
+    }
+  ],
+  "media": {
+    "image": "https://source.unsplash.com/800x600/?abb,motor",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4"
+  },
+  "steps": [
+    "Safety warning: Before proceeding, ensure you have proper training and follow safety guidelines when working with electrical equipment. If unsure, consult a certified technician or seek professional assistance.",
+    "Check the motor's cooling system for blockages or debris that may be restricting airflow. Inspect the fan and surrounding area for any signs of damage or malfunction.",
+    "Verify the motor's load and speed settings are within recommended parameters. Adjustments to these settings may help reduce overheating.",
+    "Inspect the motor's bearings for signs of wear or damage, as this could contribute to increased temperatures. Consider replacing them if necessary.",
+    "Consult the ABB M2BAX user manual or manufacturer documentation for specific guidance on troubleshooting and resolving E-04 error codes."
+  ],
+  "ecosystem_escalation": {
+    "goose_solutions": "https://www.goosesolutions.in/"
+  }
+}
