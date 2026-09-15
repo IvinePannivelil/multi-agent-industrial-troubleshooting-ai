@@ -91,24 +91,25 @@ The system is built as a modular monorepo combining a high-performance **FastAPI
 ## Monorepo Layout
 
 ```text
-goose-ecosystem/
+multi-agent-industrial-troubleshooting-ai/
 ├── apps/
-│   ├── portal/              # Main Next.js Chatbot Web Interface (Port 3004)
-│   ├── sense-api/           # Python FastAPI AI Coordination & Hybrid RAG Engine (Port 8001)
-│   ├── goose-digital/       # IIoT Telemetry & SCADA Dashboard (Port 3001)
-│   ├── goose-elevate/       # Industrial Training Platform UI (Port 3002)
-│   ├── goose-mart/          # [Placeholder] Unbuilt storefront template (Port 3000)*
-│   └── hire-my-engineer/    # [Placeholder] Unbuilt talent directory template (Port 3003)*
+│   ├── portal/              # Core Diagnostic Web Portal (Next.js 16, Port 3004)
+│   ├── sense-api/           # Core AI Coordination & Hybrid RAG Engine (FastAPI, Port 8001)
+│   ├── goose-digital/       # [Optional Demo] IIoT Telemetry & SCADA Dashboard (Port 3001)
+│   ├── goose-elevate/       # [Optional Demo] Industrial Training Platform UI (Port 3002)
+│   ├── goose-mart/          # [Unbuilt Placeholder] Scaffolding template
+│   └── hire-my-engineer/    # [Unbuilt Placeholder] Scaffolding template
 ├── packages/
 │   ├── database/            # Shared interface stubs (@goose/database)
 │   └── ui/                  # Shared UI components (@goose/ui)
 ├── docker-compose.yml       # Docker container orchestration
-├── start-ecosystem.ps1      # PowerShell launcher for all services
+├── start.ps1                # Primary PowerShell launcher (starts sense-api + portal)
 └── package.json             # Root npm workspaces definition
 ```
 
-> **Note on Placeholder Apps**:\
-> `apps/goose-mart` and `apps/hire-my-engineer` are unbuilt starter scaffolds bootstrapped via `create-next-app`. They are non-core placeholder targets; all catalog hardware and engineer profile data are maintained and served directly by the `sense-api` SQLite database.
+> **Note on Placeholder Apps & Recommendation Routing**:\
+> - `apps/goose-mart` and `apps/hire-my-engineer` are unbuilt starter scaffolds bootstrapped via `create-next-app`. They are non-core placeholders and not required to run.
+> - The specialist recommendation agents (Product, Talent, Training) already link out directly to real public platforms (`https://www.goosefly.in/goosemart`, `https://www.hiremyengineer.com/`, `https://www.gooseelevate.com/`). No auxiliary local micro-services are needed for those links to work.
 
 ---
 
@@ -132,6 +133,10 @@ goose-ecosystem/
 ---
 
 ## Setup & Running Locally
+
+The working core of this platform consists of two services:
+1. **The AI Coordination Backend** (`apps/sense-api` on port `8001`) — handles intent classification, decision-tree diagnostics, hybrid RAG retrieval, and multi-agent LLM routing.
+2. **The Diagnostic Web Portal** (`apps/portal` on port `3004`) — provides the user chat interface, step-by-step diagnostic checklists, verified citation viewer, and manual ingestion.
 
 ### 1. Prerequisites
 
@@ -158,7 +163,7 @@ PINECONE_API_KEY="your_pinecone_api_key_here"
 PINECONE_ENVIRONMENT="us-east-1"
 PINECONE_INDEX_NAME="goose-manuals"
 
-# Optional: Cohere Reranker (falls back to internal score sort if omitted)
+# Optional: Cohere Reranker (falls back to reciprocal rank fusion score if omitted)
 COHERE_API_KEY="your_cohere_api_key_here"
 ```
 
@@ -175,8 +180,21 @@ PINECONE_API_KEY=your_pinecone_api_key_here
 
 ---
 
-### 3. Start the Backend (`apps/sense-api`)
+### 3. Quick Launch (Windows)
 
+To launch both the FastAPI backend and Next.js portal automatically in one command:
+```powershell
+./start.ps1
+```
+This script initializes `sense-api` on port 8001, launches `portal` on port 3004, and automatically opens **`http://localhost:3004`** in your browser.
+
+---
+
+### 4. Manual Step-by-Step Launch
+
+If you prefer starting each service manually in separate terminals:
+
+#### Step 4a: Start the Backend (`apps/sense-api`)
 ```bash
 cd apps/sense-api
 
@@ -191,16 +209,13 @@ source venv/bin/activate
 # Install dependencies
 pip install -r requirements.txt
 
-# Start the FastAPI server
+# Start FastAPI server
 python -m uvicorn main:app --host 0.0.0.0 --port 8001 --reload
 ```
-The backend API documentation will be available at: **`http://localhost:8001/docs`**
+Interactive API documentation will be available at **`http://localhost:8001/docs`**.
 
----
-
-### 4. Start the Portal Frontend (`apps/portal`)
-
-In a new terminal window:
+#### Step 4b: Start the Diagnostic Portal (`apps/portal`)
+In a second terminal:
 ```bash
 cd apps/portal
 
@@ -210,23 +225,31 @@ npm install
 # Start development server on port 3004
 npm run dev -- -p 3004
 ```
-Open **`http://localhost:3004`** in your browser.
+Open **`http://localhost:3004`** in your browser to interact with the assistant.
 
 ---
 
-### 5. Running the Complete Ecosystem
+## Optional: Standalone Demo Apps
 
-To start all micro-apps simultaneously on Windows:
-```powershell
-./start-ecosystem.ps1
-```
-This will launch:
-- `http://localhost:3000` — Goose Mart (Placeholder)
-- `http://localhost:3001` — Goose Digital (Telemetry Dashboard)
-- `http://localhost:3002` — Goose Elevate (Course Syllabus)
-- `http://localhost:3003` — HireMyEngineer (Placeholder)
-- `http://localhost:3004` — Diagnostic Portal (Main Industrial Assistant UI)
-- `http://localhost:8001` — Coordination API (FastAPI Backend)
+The repository includes two independent demo applications originally prototyped alongside the project. These are completely optional and not required for the core troubleshooting assistant to function:
+
+1. **`apps/goose-digital` (Port 3001)** — An IIoT telemetry & SCADA status dashboard demonstrating live machine metric monitoring.
+   ```bash
+   cd apps/goose-digital
+   npm install
+   npm run dev -- -p 3001
+   ```
+   Access at `http://localhost:3001`.
+
+2. **`apps/goose-elevate` (Port 3002)** — A sample course syllabus and certification mockup for industrial plant operator training.
+   ```bash
+   cd apps/goose-elevate
+   npm install
+   npm run dev -- -p 3002
+   ```
+   Access at `http://localhost:3002`.
+
+*(Note: `apps/goose-mart` and `apps/hire-my-engineer` are unbuilt placeholder scaffolds and do not need to be run).*
 
 ---
 
