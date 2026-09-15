@@ -9,7 +9,7 @@ export const starterSessions = [
             {
                 id: "s1-w",
                 role: "assistant",
-                content: "Hello! I am Goose Sense, your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
+                content: "Hello! I am your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
             },
             {
                 id: "s1-u1",
@@ -30,7 +30,7 @@ export const starterSessions = [
             {
                 id: "s2-w",
                 role: "assistant",
-                content: "Hello! I am Goose Sense, your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
+                content: "Hello! I am your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
             },
             {
                 id: "s2-u1",
@@ -51,7 +51,7 @@ export const starterSessions = [
             {
                 id: "s3-w",
                 role: "assistant",
-                content: "Hello! I am Goose Sense, your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
+                content: "Hello! I am your Industrial AI Assistant. Ask me anything about PLCs, SCADA systems, industrial hardware, troubleshooting, or automation — I'm here to help."
             },
             {
                 id: "s3-u1",

@@ -85,7 +85,7 @@ export default function Home() {
           <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3">
             <img src="/goose-icon.jpg" alt="Goose Icon" className="h-[32px] w-[32px] object-contain rounded-full border border-gray-200" />
             <span className="text-xl font-semibold tracking-tight text-gray-900">
-              Goose Sense
+              Industrial Assistant
             </span>
           </div>
         </header>

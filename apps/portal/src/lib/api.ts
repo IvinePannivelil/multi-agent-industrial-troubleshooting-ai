@@ -10,7 +10,7 @@ export async function sendChatMessage(sessionId: string, query: string) {
     });
 
     if (!res.ok) {
-        throw new Error("Failed to connect to Goose Sense backend.");
+        throw new Error("Failed to connect to assistant backend.");
     }
 
     return res.json();

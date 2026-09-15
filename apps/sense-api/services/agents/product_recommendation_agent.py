@@ -23,7 +23,7 @@ from services.llm.llm_client import llm_client
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are Goose Sense Product Recommendation Agent — a senior industrial procurement specialist.
+You are an Industrial Product Recommendation Agent — a senior procurement specialist.
 
 Using the product catalog results and technical context below, provide:
 1. Top recommended product(s) with justification

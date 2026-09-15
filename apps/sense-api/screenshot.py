@@ -11,8 +11,8 @@ with sync_playwright() as p:
     
     # This phrase has "fault" keyword to force TROUBLESHOOTING intent in the classifier
     # AND "TEST UI RENDER" to trigger the agent's hardcoded bypass
-    page.click('textarea[placeholder="Ask Goose Sense..."]')
-    page.keyboard.type('fault error TEST UI RENDER')
+    page.click('textarea[placeholder="Ask Industrial Assistant..."]')
+    page.fill('textarea[placeholder="Ask Industrial Assistant..."]', 'What is pasteurization?')
     page.keyboard.press('Enter')
     print("Test trigger sent")
     

@@ -17,8 +17,8 @@ foreach ($app in $apps) {
     Start-Process powershell -WorkingDirectory $rootDir -ArgumentList "-NoExit", "-Command", "`$env:PORT=$port; npm run dev --workspace=$name" -WindowStyle Minimized
 }
 
-# Start the Python Coordination Layer (Goose Sense API)
-Write-Host "Starting Goose Sense API on port 8001..."
+# Start the Python Coordination Layer (FastAPI API)
+Write-Host "Starting Coordination Layer API on port 8001..."
 Start-Process powershell -WorkingDirectory $rootDir -ArgumentList "-NoExit", "-Command", "cd apps/sense-api; .\venv\Scripts\python.exe -m uvicorn main:app --host 0.0.0.0 --port 8001 --reload" -WindowStyle Minimized
 
 Write-Host "Waiting 15 seconds for servers to start..."

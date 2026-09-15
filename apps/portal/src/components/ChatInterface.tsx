@@ -134,7 +134,7 @@ export default function ChatInterface({ sessionId, onSessionUpdated }: ChatInter
         });
       }
     } catch (err: any) {
-      setError(err.message || "Unable to connect to Goose Sense backend.");
+      setError(err.message || "Unable to connect to assistant backend.");
     } finally {
       setIsLoading(false);
     }
@@ -165,7 +165,7 @@ export default function ChatInterface({ sessionId, onSessionUpdated }: ChatInter
           {isLoading && (
             <div className="flex w-full items-center justify-start gap-2 py-2 text-sm text-gray-500">
               <Loader2 className="h-4 w-4 animate-spin text-gray-400" />
-              Goose Sense is thinking...
+              Industrial Assistant is thinking...
             </div>
           )}
 
@@ -184,7 +184,7 @@ export default function ChatInterface({ sessionId, onSessionUpdated }: ChatInter
         <div className="mx-auto max-w-3xl">
           <ChatInput onSend={handleSend} isLoading={isLoading} />
           <div className="mt-3 text-center text-xs text-gray-400">
-            Goose Sense AI can make mistakes. Verify critical industrial information.
+            Industrial AI Assistant can make mistakes. Verify critical industrial information.
           </div>
         </div>
       </div>

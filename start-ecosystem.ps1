@@ -20,6 +20,6 @@ Write-Host "Opening Chrome..."
 Start-Process "chrome" -ArgumentList "http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "http://localhost:3004"
 Write-Host "Done!"
 
-# Start the Python Coordination Layer (Goose Sense API)
-Write-Host "Starting Goose Sense API on port 8001..." -ForegroundColor Cyan
+# Start the Python Coordination Layer (FastAPI API)
+Write-Host "Starting Coordination Layer API on port 8001..." -ForegroundColor Cyan
 Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd apps/sense-api; .\venv\Scripts\activate; uvicorn main:app --host 0.0.0.0 --port 8001 --reload"

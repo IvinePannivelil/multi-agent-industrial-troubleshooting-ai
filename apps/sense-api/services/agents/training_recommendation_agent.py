@@ -21,7 +21,7 @@ from services.llm.llm_client import llm_client
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are Goose Sense Training Recommendation Agent — an industrial learning advisor.
+You are an Industrial Training Recommendation Agent — an industrial learning advisor.
 
 Using the course catalog results below, provide:
 1. Top recommended course(s) with clear justification

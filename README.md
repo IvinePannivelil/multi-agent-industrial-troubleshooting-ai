@@ -1,22 +1,24 @@
-# Goose Sense: Industrial R&D Troubleshooting & Ecosystem Assistant
+# Multi-Agent Industrial Troubleshooting AI
 
-An AI-powered industrial troubleshooting coordination layer and retrieval system designed for dairy automation and process manufacturing plants. Goose Sense enables plant operators, maintenance engineers, and technicians to diagnose equipment failures step-by-step, review technical documentation via hybrid RAG retrieval, and automatically escalate complex issues to verified parts, field engineers, or certified training courses.
+A production-grade, multi-agent RAG-based industrial troubleshooting assistant and diagnostic coordination platform designed for manufacturing plants, automation systems, and process facilities. The system enables plant operators, maintenance engineers, and technicians to diagnose equipment failures step-by-step, retrieve verified technical documentation via hybrid RAG retrieval, and automatically escalate complex issues to verified parts, field engineers, or certified training courses.
+
+> **Note:** Originally prototyped as an internal R&D concept ("Goose Sense") for dairy and process automation, this project has been refactored into an open, standalone industrial troubleshooting platform.
 
 ---
 
 ## Architecture Overview
 
-Goose Sense is built as a modular monorepo combining a high-performance **FastAPI AI Coordination Backend** (`apps/sense-api`) and an interactive **Next.js Web Portal** (`apps/portal`).
+The system is built as a modular monorepo combining a high-performance **FastAPI AI Coordination Backend** (`apps/sense-api`) and an interactive **Next.js Web Portal** (`apps/portal`).
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
-│                        Goose Sense Portal (Next.js 16)                 │
+│                     Diagnostic Web Portal (Next.js 16)                 │
 │         Interactive Diagnostic UI • Checklists • Media Playback        │
 └────────────────────────────────────┬───────────────────────────────────┘
                                      │ HTTP /chat (JSON)
                                      ▼
 ┌────────────────────────────────────────────────────────────────────────┐
-│                      Goose Sense API (FastAPI 3.0)                     │
+│                   Coordination Engine (FastAPI 3.0)                    │
 │  ┌──────────────────────────────────────────────────────────────────┐  │
 │  │                    Two-Pass Intent Classifier                    │  │
 │  │       Regex Rule Pass (Fast) ──► LLM Fallback Classifier         │  │
@@ -223,8 +225,8 @@ This will launch:
 - `http://localhost:3001` — Goose Digital (Telemetry Dashboard)
 - `http://localhost:3002` — Goose Elevate (Course Syllabus)
 - `http://localhost:3003` — HireMyEngineer (Placeholder)
-- `http://localhost:3004` — Goose Sense Portal (Main Chatbot)
-- `http://localhost:8001` — Goose Sense API (FastAPI Backend)
+- `http://localhost:3004` — Diagnostic Portal (Main Industrial Assistant UI)
+- `http://localhost:8001` — Coordination API (FastAPI Backend)
 
 ---
 

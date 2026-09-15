@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 # App
 # ---------------------------------------------------------------------------
 app = FastAPI(
-    title="Goose Sense Coordination Layer",
+    title="Industrial AI Coordination Layer",
     description=(
         "AI Agent Layer + Hybrid RAG pipeline: "
         "Intent Classification -> Agent Routing -> Vector/BM25/RRF/Rerank"
@@ -161,7 +161,7 @@ def health_check():
     from services.intent_classifier import ALL_INTENTS
     return {
         "status":            "ok",
-        "service":           "Goose Sense Coordination Layer",
+        "service":           "Industrial AI Coordination Layer",
         "version":           "3.0.0",
         "bm25_doc_count":    bm25_index.size,
         "supported_intents": ALL_INTENTS,

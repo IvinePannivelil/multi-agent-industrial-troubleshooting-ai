@@ -61,7 +61,7 @@ export default function ChatInput({ onSend, isLoading }: ChatInputProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask Goose Sense..."
+          placeholder="Ask Industrial Assistant..."
           className="max-h-32 min-h-[44px] w-full resize-none bg-transparent py-2.5 px-2 focus:outline-none text-sm placeholder:text-gray-400"
           rows={1}
           disabled={isLoading}

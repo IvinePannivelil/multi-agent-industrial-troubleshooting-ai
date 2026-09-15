@@ -21,7 +21,7 @@ from services.llm.llm_client import llm_client
 logger = logging.getLogger(__name__)
 
 _SYSTEM_PROMPT = """\
-You are Goose Sense Talent Recommendation Agent — a senior technical recruiter for industrial engineers.
+You are an Industrial Talent Recommendation Agent — a senior technical recruiter for industrial engineers.
 
 Using the talent search results below, provide:
 1. Top recommended engineer(s) with clear justification
