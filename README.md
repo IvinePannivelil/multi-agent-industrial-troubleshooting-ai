@@ -1,8 +1,12 @@
 # Multi-Agent Industrial Troubleshooting AI
 
-A production-grade, multi-agent RAG-based industrial troubleshooting assistant and diagnostic coordination platform designed for manufacturing plants, automation systems, and process facilities. The system enables plant operators, maintenance engineers, and technicians to diagnose equipment failures step-by-step, retrieve verified technical documentation via hybrid RAG retrieval, and automatically escalate complex issues to verified parts, field engineers, or certified training courses.
+A multi-agent RAG-based industrial troubleshooting assistant and diagnostic coordination platform designed for manufacturing plants, automation systems, and process facilities. The system enables plant operators, maintenance engineers, and technicians to diagnose equipment failures step-by-step, retrieve verified technical documentation via hybrid RAG retrieval, and automatically escalate complex issues to verified parts, field engineers, or certified training courses.
 
-> **Note:** Originally prototyped as an internal R&D concept ("Goose Sense") for dairy and process automation, this project has been refactored into an open, standalone industrial troubleshooting platform.
+---
+
+## Project Background
+
+This was originally prototyped as an internal R&D concept while working at an industrial automation company, exploring how a RAG-based assistant could help plant technicians troubleshoot equipment and find relevant resources. Development was paused before full completion. This is a solo project — architecture, implementation, and all code here are my own work, built and published with permission from that company. Business-facing details (vertical names, URLs) reflect what's publicly available on their websites.
 
 ---
 
