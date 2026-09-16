@@ -106,6 +106,8 @@ multi-agent-industrial-troubleshooting-ai/
 ├── packages/
 │   ├── database/            # Shared interface stubs (@goose/database)
 │   └── ui/                  # Shared UI components (@goose/ui)
+├── scripts/                 # Utility & automation scripts (e.g. capture.js)
+├── tests/                   # End-to-end and visual regression test suites
 ├── docker-compose.yml       # Docker container orchestration
 ├── start.ps1                # Primary PowerShell launcher (starts sense-api + portal)
 └── package.json             # Root npm workspaces definition

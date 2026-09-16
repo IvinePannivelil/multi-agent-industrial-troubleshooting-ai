@@ -8,7 +8,10 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "powershell -ExecutionPolicy Bypass -File ./start.ps1",
+    "test": "node tests/test_troubleshooting_ui.mjs",
+    "test:ui": "node tests/test-ui.mjs",
+    "capture": "node scripts/capture.js"
   },
   "keywords": [],
   "author": "",

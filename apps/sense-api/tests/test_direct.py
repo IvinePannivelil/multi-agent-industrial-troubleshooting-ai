@@ -1,6 +1,10 @@
 import sys
+import os
+from pathlib import Path
 import json
 import traceback
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 try:
     from services.agents import AgentRouter
